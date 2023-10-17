@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Goutham</title>
+  </head>
+  <body>
+    <h1>COMPARATIVE ANALYSIS OF FIR FILTER DESIGN USING DIFFERENT MULTIPLIERS AND CLA ADDER</h1>
+    <h4>GOUTHAM GUDIPUDI</h4>
+    <p>
+     <i>School of Electronics and Communication Engineering,Vignan's Foundation For Science Technology & Research,Vadlamudi,Guntur,Andhrapradesh</i>
+    </p>
+    <section>
+      <h4>ABSTRACT</h4>
+      <p>
+        A comparative analysis study of FIR filter implementation reveals that employing various multiplier design strategies 
+        can help identify a high-quality response filter from a range of FIR filters. The significance of filters stems from
+        the rapid growth of communication systems in recent times, as they play a crucial role in these systems. 
+        Filters are extensively utilized in digital signal processing applications to achieve objectives such as
+        noise reduction, signal amplification, and data compression. Their primary purpose is to enable the recovery
+        of the original signal at the receiver side, allowing for effective communication. Even if the filtered output is
+        relatively small, a strong filtered signal can be sent to an amplifier to restore the original signal. To achieve this, 
+        it is essential for the filter to be both efficient and well-designed. Given the increasing number of communication systems, 
+        selecting the right filter becomes paramount to ensure optimal performance and maintain the integrity of the transmitted signal. 
+        By comparing the implementation stats of various FIR filters and considering different multiplier design strategies, 
+        it is possible to identify a high-quality response filter. Such a filter will contribute to the effective functioning of communication 
+        systems by enabling noise reduction, signal amplification, and data compression, ultimately leading to successful signal recovery at the receiver end.
+      </p>
+      <h4>KEYWORDS:</h4>
+      <p>
+        FIR Filter, Implementation, Multiplier Design Strategies, High-Quality Response Filter, Communication Systems, Important Component,
+        Noise Reduction, Signal Amplification, Data Compression, Digital Signal Processing, Filter Effectiveness, Filter Design.
+      </p>
+      <h4>INTRODUCTION</h4>
+      <p>
+       Gather The growing popularity of mobile computing and portable multimedia apps has fueled the need for
+       compact and high-speed digital signal processing (DSP) solutions. The demand for small and efficient 
+       DSP solutions has surged due to the increasing demand for mobile devices, Digital devices and multimedia 
+       applications [6]. A key step in DSP systems, Finite Impulse Response [FIR] filtering is frequently applied 
+       in communication systems. For a variety of signal processing tasks, Because FIR filters offer effective and 
+       dependable filtering capabilities[7]. It is essential to signal processing and makes noise reduction, 
+       equalisation, and channel modelling possible. In order to clean up and change signals, digital filters
+       are chosen over analogue filters because they provide more accuracy, flexibility, and stability. 
+       They are a preferred option in signal processing because they offer better control and accuracy
+       when modifying the signal's features[8]. Here filter is made up of three elements Adder, Multiplier,
+       Delay element. The multiplier's speed affects the FIR filter processor's execution time and speed. 
+       The design of a FIR filter combining Array and Booth multipliers using high-level optimisation approaches was 
+       successfully illustrated in this research work [1]. In this second study concluded that using the Booth multiplier 
+       greatly reduces chip size without increasing power dissipation, leading to a speedier system [1]. Third study states 
+       that "Urdhva Tiryakbhyam Sutra" is a powerful multiplication technique from Vedic mathematics that is introduced
+       in this work. Its computing benefits and hierarchical multiplier design are highlighted.[2]. 
+       I this work Different multiplier and adder combinations were employed in this to construct microprogrammed 
+       sequential and parallel FIR filter topologies on Xilinx Virtex-5 FPGA. Utilising the Synplify Pro programme 
+       to analyse the performance of different architectures, it was discovered that the sequential FIR filter 
+       with Wallace tree multiplier/Carry skip adder combination performed more efficiently than the other 
+       combinations tested [5]. This study of work states that When a FIR filter is combined with a Booth
+       multiplier and carry select adder, it performs better than previous systems in terms of delay, area, and power consumption.
+       DSP applications, audio signal processing, and applications involving medical signals all profit greatly from 
+       this effective design [3]. This study states in terms of calculating the EDP, the WT multiplier performs better
+       than all other proposed multiplication techniques. The WT filter performs better and with less delay over 
+       a wider frequency range, whereas the VM and RCA combo produces the lowest EDP for set I frequencies [4]. 
+       The review of this study evaluates several adders and multipliers for FIR filter design. Performance-wise, 
+       the Han-Carlson Adder, which is based on Vedic mathematics, is the greatest choice, but it consumes a lot of power. 
+       The Carry Look Ahead Adder, which is similarly based on Vedic mathematics and delivers good performance and low power 
+       consumption, is an alternative [9]. In this study the Karatsuba formula is used to create an effective FIR filter. 
+       Three low dynamic range sub-filters make up this filter, which uses a parallel MB pre-encoded CS Wallace tree 
+       multiplier for best results. Compared to a conventional transposed FIR filter, the design has better performance, 
+       a smaller circuit area, and uses less power. Thus, we test alternative multiplier strategies to see which filter 
+       performs more quickly. And, to know the best filter in terms of area, power, delay and performance in the context 
+       of operations, analysis of various multiplication approaches is required.
+      </p>
+      <h4>LITERATURE REVIEW</h4>
+      <p>
+       Here filter is made up of three elements Adder, Multiplier, Delay element. The multiplier's speed affects the FIR 
+       filter processor's execution time and speed. The design of a FIR filter combining Array and Booth multipliers using
+       high-level optimisation approaches was successfully illustrated in this research work [1]. 
+       In this second study concluded that using the Booth multiplier greatly reduces chip size without increasing power 
+       dissipation, leading to a speedier system [1]. Third study states that "Urdhva Tiryakbhyam Sutra" is a 
+       powerful multiplication technique from Vedic mathematics that is introduced in this work. Its computing 
+       benefits and hierarchical multiplier design are highlighted.[2]. I this work Different multiplier and adder 
+       combinations were employed in this to construct microprogrammed sequential and parallel FIR filter topologies on Xilinx Virtex-5 FPGA. 
+       Utilising the Synplify Pro programme to analyse the performance of different architectures, it was discovered that the sequential FIR 
+       filter with Wallace tree multiplier/Carry skip adder combination performed more efficiently than the other combinations tested [5]. 
+       This study of work states that When a FIR filter is combined with a Booth multiplier and carry select adder, it performs better 
+       than previous systems in terms of delay, area, and power consumption. DSP applications, audio signal processing, and applications 
+       involving medical signals all profit greatly from this effective design [3]. This study states in terms of calculating the EDP, the
+       WT multiplier performs better than all other proposed multiplication techniques. 
+      </p>
+      <h4>FINITE IMPULSE RESPONSE FILTER</h4>
+      <p>
+        A Finite Impulse Response (FIR) filter is a digital filter used in signal processing 
+        to modify or enhance a signal. It operates by convolving the input signal with a sequence
+        of coefficients called the impulse response. The output of the FIR filter is a weighted 
+        sum of the past and current input samples. Mathematically,
+      </p>
+      <p>
+        The output y[n] of an FIR filter with N+1 coefficients can be expressed as: y[n] = b[0] * x[n] + b[1] * x[n-1] + b[2] * x[n-2] + ... + b[N] * x[n-N] 
+        where x[n] represents the input signal at time index n, and b[0], b[1], ..., b[N] are the filter coefficients.
+      </p>
+      <p>
+        The filter coefficients determine the frequency response and characteristics of the filter. 
+        By adjusting the values of the coefficients, different frequency components of the input 
+        signal can be selectively amplified or attenuated. FIR filters have several advantages, 
+        including stability, linear phase response, and ease of implementation. They are widely 
+        used in various applications such as audio and image processing, communications, and control
+        systems due to their versatility and predictable behavior.
+      </p>
+      <h4>MULTIPLIERS</h4>
+      <p>
+        The multiplier is used to multiply the filter coefficients with the input samples or intermediate values.
+        In an FIR filter, each coefficient represents the desired contribution of a specific delayed sample to 
+        the output. The multiplier performs the necessary multiplication operation to combine the coefficients 
+        with the corresponding input samples.
+       
+      </p>
+      <p>
+        A. Booth’s Multiplier : The Booth's multiplier is a multiplication algorithm that reduces the number of partial 
+        products generated. It includes blocks such as the partial product generator, Booth’s encoder, and final adder block.
+      <p>
+        Partial product block creates partial products by multiplying the multiplicand by the multiplier that has been 
+        Booth-encoded. By changing the multiplicand based on the multiplier bits, these partial products are created. 
+        Booth Encoder block It examines neighboring multiplier bits to decide the kind of encoding necessary. 
+        In order to designate whether a partial product should be added or deleted, it generates control signals. 
+        Final Adder block It totals all the partial products while accounting for the Booth encoded values and control 
+        signals. The aggregate of these partial products yields the ultimate outcome. By taking use of the regularity 
+        in the multiplier's bit patterns, Booth's multiplier decreases the number of partial products, enabling quicker 
+        multiplication with less hardware.
+      </p>
+      <p>
+        B. Dadda Multiplier : The Dadda multiplier is a binary multiplier that efficiently performs multiplication operations.
+        It was developed by Luigi Dadda in the early 1960s and has been widely used in digital circuits. The internal 
+        structure of a Dadda multiplier consists of a series of stages, each containing a partial product generation 
+        unit and a partial product reduction unit. The partial product generation unit generates all possible partial 
+        products by multiplying the bits of the two input numbers. These partial products are then fed into the partial 
+        product reduction unit. In the partial product reduction unit, a tree-like structure called the Dadda tree is 
+        employed to perform a parallel reduction operation.
+      </p>
+      <p>
+        The Dadda tree efficiently reduces the number of partial products by merging and summing them in a balanced manner. 
+        This reduces the number of stages required for the multiplication operation. The Dadda multiplier's internal structure 
+        enables it to perform multiplication using a reduced number of logic gates, resulting in faster and more efficient 
+        multiplication operations compared to traditional methods. It is commonly used in various applications, 
+        including digital signal processing, graphics processing units, and general-purpose processors.
+      </p>
+      <p>
+        C. Vedic Multiplier : A Vedic multiplier is a computational technique derived from ancient Indian mathematical 
+        texts known as the Vedas. It is a high-speed multiplication algorithm that can perform multiplication of two 
+        numbers in a parallel and efficient manner. The Vedic multiplier is based on the principles of sutras or 
+        formulas found in the Vedic mathematics. The basic idea behind the Vedic multiplier is to decompose the 
+        numbers being multiplied into smaller parts and then perform a series of arithmetic operations to obtain 
+        the result. This decomposition process allows for parallel processing, reducing the overall computation time. 
+        The Vedic multiplier consists of several stages, including digit decomposition, partial product generation, 
+        and final product addition. Each stage is designed to exploit the properties of the numbers being multiplied 
+        and optimize the computational process. The advantages of the Vedic multiplier include its ability to perform 
+        multiplication in constant time regardless of the size of the numbers, its low power consumption, and its 
+        suitability for implementation in hardware circuits. The Vedic multiplier is a fast and efficient multiplication algorithm 
+        based on ancient Indian mathematical principles. It offers advantages such as parallel processing and low power consumption, 
+        making it suitable for various applications requiring high-speed multiplication.
+      </p>
+      <p>
+        D. Karatsuba Multiplier : The Karatsuba algorithm, also known as the Karatsuba multiplier, is a fast multiplication
+        technique that reduces the number of multiplications required to compute the product of two numbers. It was developed 
+        by Anatoly Karatsuba in 1960. The algorithm is based on the observation that the product of two numbers can be expressed 
+        using three smaller multiplications instead of the standard four multiplications used in traditional long multiplication. 
+        By recursively applying this approach, the number of required multiplications can be significantly reduced, leading to faster 
+        multiplication. The Karatsuba algorithm works by splitting the given numbers into two halves, each with half the number of digits. 
+        It then recursively computes the products of these halves and combines them to obtain the final product. This technique reduces the 
+        overall complexity from O(n^2) to approximately O(n^log2(3)), resulting in significant speed improvements for large numbers. The
+        Karatsuba multiplier has applications in various fields where fast multiplication is required, such as cryptography, 
+        signal processing, and computer algebra systems. Its efficiency makes it particularly useful when multiplying large numbers 
+        with thousands or millions of digits, where traditional long multiplication becomes impractical. Overall, the Karatsuba multiplier 
+        offers an efficient method for multiplying large numbers by reducing the number of required multiplications, leading to faster computation 
+        times and improved performance in various domains.
+      </p>
+      <h4>CARRY LOOK AHEAD ADDER</h4>
+      <p>
+        A carry look-ahead adder (CLA) is a digital circuit that quickly adds binary numbers by simultaneously 
+        calculating carry signals for each stage. It gets rid of the carry propagation delay in ripple carry adders. 
+        Each level of the CLA produces carry signals for the relevant bit location. Using AND and XOR gates, 
+        carry generation logic determines carry signals depending on input operands and carry input from the prior stage. 
+        To determine the ultimate carry outputs, carry propagation goes through cascaded OR gates. Although CLA takes additional
+        hardware and becomes more difficult with larger operands, it dramatically increases speed for huge binary values. 
+        High-performance arithmetic units frequently employ it.
+      <p>
+        
+      </p>
+      <h4>SIMULATION AND RESULTS</h4>
+      <p>
+        We created a Finite Impulse Response (FIR) filter for our Vivado-based project in order to examine various multiplier
+        strategies and their effects on filter performance. We created several multiplier designs using a modular strategy, 
+        and we thoroughly simulated each filter setting to ensure accurate results. We evaluated the performance and trade-offs
+        associated with several multiplier architectures (such as Booth, Wallace, and array multipliers) through thorough 
+        study, which included metrics like filter responsiveness, signal-to-noise ratio, and overall accuracy. 
+        This thorough analysis helped us choose the best multiplier technique for our FIR filter and gave us 
+        useful information for future filter designs, increasing the effectiveness of those designs in practical settings.
+      </p>
+      <p>
+        A 16-bit Carry-Lookahead Adder (CLA) is a digital circuit that performs addition on two 16-bit binary numbers. 
+        It consists of multiple stages of logic gates, where each stage generates and propagates carry signals in parallel.
+        The schematic of a 16-bit CLA adder includes XOR gates for bit-wise addition, AND gates for carry generation, 
+        and OR gates for carry propagation, resulting in a high-speed and efficient adder implementation.
+      </p>
+      <p>
+        The above simulation graph of a D-register represents the behavior of the register over time. It shows 
+        the values stored in the register (D input) and how they propagate to the output (Q). The graph typically 
+        displays a stable state where the output holds the same value as the input until a clock signal triggers 
+        the next input update. The schematic of a D-register illustrates the internal structure, consisting of 
+        flip-flops and logic gates that enable the storage and transfer of data.
+      </p>
+      <div class="container">
+        <img src="image.png" alt="Centered Image">
+      </div>
+      <p>
+        The waveform representation for the FIR filter using Carry-Lookahead Adder (CLA) and Booth's multiplier 
+        illustrates the output waveform of the filter, showcasing the filtered signal's behavior over time. 
+        It demonstrates the effectiveness of the filter in removing unwanted frequency components and preserving 
+        the desired signal.
+      </p>
+      <div class="container">
+        <img src="image2.png" alt="Centered Image">
+      </div>
+      <p>
+        The wave form and schematic for the FIR filter using the Carry-Lookahead Adder (CLA) and Dadda multiplier 
+        illustrates the internal structure of the filter. It depicts the arrangement of components such as multipliers,
+        adders, and delay elements, along with their connections and interconnections. The schematic showcases the specific
+        implementation details of the filter, enabling a deeper understanding of its architecture and functioning.
+      </p>
+
+      <h4>CONCLUSION</h4>
+      <p>
+        Finally, in this context, four approaches have been considered for implementing FIR filters in terms of delay 
+        comparison Vedic multiplier with carry-lookahead adder (CLA) and a Karustuba Vedic multiplier with CLA performance
+        is better as well as in terms of Area comparison The Karustuba Vedic multiplier with CLA has the better performance
+        by comparing all combinations concluded that FIR filter design with Karustuba Vedic multiplier is having
+        better performance so, we can design better FIR filter with these adder and multiplier combination.
+      </p>
+      <h4>REFERENCES</h4>
+      <p>
+        [1] S. Nagaria, A. Singh and V. Niranjan, "Efficient FIR Filter Design using Booth Multiplier for VLSI Applications,"
+        2018 International Conference on Computing, Power and Communication Technologies (GUCON), Greater Noida, India, 2018, pp. 581-584, doi: 10.1109/GUCON.2018.8674998
+      </p>
+      <p>
+        [2] Beerakayala latha suresh, s. Kannappan “Implementation of fir filter by using multipliers with optimized 
+        performance adders “Journal of Engineering Sciences Vol 13 Issue 11,2022, ISSN:0377-9254.
+      </p>
+      <p>
+        [3] S. Soundarya, Mr. N. Arumugam, Mr.R. Ramesh kumar “Design of Fir Filter using Efficient Adder and Multiplier 
+        for ECG Signal Applications” International Journal of Engineering Applied Sciences and Technology, 2020 Vol. 4,
+        Issue 9, ISSN No. 2455-2143, Pages 276-282.
+      </p>
+      <p>
+        [4] Mittal, A., Nandi, A. and Yadav, D. (2017), Comparative study of 16-order FIR filter design using different
+        multiplication techniques. IET Circuits Devices Syst., 11: 196-200. https://doi.org/10.1049/iet-cds.2016.0146.
+      </p>
+      <p>
+        [5] A. A. AlJuffri, A. S. Badawi, M. S. BenSaleh, A. M. Obeid and S. M. Qasim, "FPGA implementation 
+        of scalable microprogrammed FIR filter architectures using Wallace tree and Vedic multipliers," 2015 
+        Third International Conference on Technological Advances in Electrical, Electronics and Computer Engineering (TAEECE), 
+        Beirut, Lebanon, 2015, pp. 159-162, doi: 10.1109/TAEECE.2015.7113619.
+      </p>
+      <p>
+        [6] Maskell, D.L.: ‘Design of efficient multiplierless FIR filters’, IET Circuits Device Syst., 2007, 1, (2), 
+        pp. 175–180J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68–73.
+      </p>
+      <p>
+        [7] Nekoei, F., Kavian, Y.S.: ‘Some schemes of realization digital FIR filters on FPGA for communication applications’.
+         IEEE Crimean Conf. on Microwave and Telecommunication Tech., September 2010, pp. 616–619
+      </p>
+      <p>
+        [8] Proakis, J., Manolakis, D.: ‘Digital signal processing’ (2008, 4th edn.), Pearson Prentice Hall
+      </p>
+      <p>
+        [9] R. Yadav, Y. Kumar, K. K. Verma, D. Joshi, H. Yadav and A. Dev, "Review on FIR Filters Using Different Adders 
+        and Multipliers Based on Vedic Mathematics," 2021 International Conference on Simulation, Automation & Smart Manufacturing (SASM), 
+        Mathura, India, 2021, pp. 1-5, doi: 10.1109/SASM51857.2021.9841136.
+      </p>
+      <p>
+        [10] E. Kyritsis and K. Pekmestzi, "Hardware efficient fast FIR filter based on Karatsuba algorithm," 
+        2016 5th International Conference on Modern Circuits and Systems Technologies (MOCAST), Thessaloniki, 
+        Greece, 2016, pp. 1-4, doi: 10.1109/MOCAST.2016.7495158.
+      </p>
+      <p>
+        [11] S. Madhavi, K. Rasagna, N. Kavya, M. Sindhu and V. Kaveri, "Implementation of Programmable FIR Filter Using Dadda 
+        Multiplier and Parallel Prefix Adder," 2018 International Conference on Inventive Research in Computing Applications (ICIRCA), 
+        Coimbatore, India, 2018, pp. 585-589, doi:10.1109/ICIRCA.2018.8597249.
+     </p>
+    </section>
+  </body>
+</html>

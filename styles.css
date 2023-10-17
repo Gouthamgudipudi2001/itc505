@@ -1,0 +1,33 @@
+body 
+{
+    background-color: lightblue;
+}
+body {
+    border-top: 4px double purple;
+    border-right: 4px double purple;
+    border-bottom: 4px double purple;
+    border-left: 4px double purple;
+  }
+body 
+{
+    padding: 15px 20px 10px 5px; /* top right bottom left */
+}
+body {
+    font-family: "Times New Roman", Times, serif;
+  }
+h1 
+{
+    color: rgb(55, 53, 186);
+    text-align: center;
+}
+h4 
+{
+    color: rgb(223, 109, 22);
+    text-align: Left;
+}
+.container 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
